@@ -2,3 +2,9 @@
 select vendorcontactfname, VendorContactLName, VendorName 
 from Vendors
 order by VendorContactLName, VendorContactFName ASC;
+
+--Excercise 2
+select InvoiceNumber AS Number, InvoiceTotal AS Total,
+(PaymentTotal + Credittotal) AS Credits,
+Balance = (InvoiceTotal - (PaymentTotal + CreditTotal))
+from Invoices;
