@@ -1,0 +1,4 @@
+--Excercise 1
+select vendorcontactfname, VendorContactLName, VendorName 
+from Vendors
+order by VendorContactLName, VendorContactFName ASC;
