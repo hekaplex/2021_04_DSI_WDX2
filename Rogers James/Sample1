@@ -1,0 +1,101 @@
+/*
+QUESTIONS
+=============
+
+1.	What are the four basic clauses of a simple SELECT statement that retrieves data from a single table? What would you code in each one?
+SELECT, WHERE, FROM, ORDER BY.  SELECT would be used by each one
+2.	What are five ways that you can code the column specification in a SELECT statement?  You can use *, column_name, Arithmetic expression, string expression, Function
+3.	What’s a column alias? What are two ways you can create one in Transact-SQL?  Alias is when you like to display a different header row name for your column other than what is in the table.  Alias’ can be created with = or AS
+4.	What’s a string expression? How do you code one? A string is the result of a concatenation.  You can use a string to combine First & Last Name columns into 1 single FullName column.
+5.	How does the order of precedence for arithmetic operators affect the result of an arithmetic expression? SQL will read the order of operations from left to right
+6.	What’s a function? What are the parameters (or arguments) of a function, and how do you supply them?  A function performs an operation and returns a value.  After naming the function, the parameters and arguments are contained in paraentheis.
+7.	How do the ALL and DISTINCT keywords affect which rows are included in a result set?  When using WHERE, ALL of the rows in the table will populate the results, using DISTANT eliminates duplication rows
+8.	How does the TOP clause affect which rows are included in a result set?  Top is used to limit the number of rows retrieved by SELECT
+9.	What are comparison operators? What are logical operators? How are they used in search conditions?  Comparison operators are used to compare two expressions in that if the result is TRUE, the row being tested is included in the query.  
+10.	What’s the effect of the IN operator on a search condition? the BETWEEN operator?  the LIKE operator? the IS NULL clause?  IN is a test expression used to determine equal values.  The BETWEEN is used to compare a range of values.  The like to find partially unknown data or as a short cut to data, it permits the use of wildcard to help in searches.  The IS NULL is the result of an empty string, it’s a notification that requested data in not avaialble
+11.	When you include a sort expression in a SELECT statement, what’s the default sort order? How do you change that?  The default sort order is prescribed in the table under Design.  You can sort by going into the table (design) to rearrange, you can used ORDER BY, and just after SELECT the field name can be arrangd.
+12.	Name at least one other option for sorting a result set besides using a column name from the base table.  An ordinal for the columns position such as ORDER BY 1
+*/
+
+/*
+EXERCISE
+=============
+
+1.	Write a SELECT statement that returns three columns from the Vendors table: VendorContactFName, VendorContactLName, and VendorName. Sort the result set by last name, then by first name.
+
+VendorContactLName	VendorContactFName	VendorName
+Aaronsen	Thom	Dristas Groom & McCormick
+Aileen	Joan	Internal Revenue Service
+Alberto	Francesco	US Postal Service
+Alexis	Alexandro	Yale Industrial Trucks-Fresno
+Alondra	Zev	Leslie Company
+
+2.	Write a SELECT statement that returns four columns from the Invoices table, named Number, Total, Credits, and Balance:
+Number	Column alias for the InvoiceNumber column Total	Column alias for the InvoiceTotal column
+Credits	Sum of the PaymentTotal and CreditTotal columns
+Balance	InvoiceTotal minus the sum of PaymentTotal and CreditTotal
+a.	Use the AS keyword to assign column aliases.
+b.	Use the = assignment operator to assign column aliases.
+
+Number	Total	Credits	Balance
+P-0608	20551.18	1200.00	19351.18
+0-2436	10976.06	0.00	10976.06
+31361833	579.42	0.00	579.42
+9982771	503.20	0.00	503.20
+547480102	224.00	0.00	224.00
+134116	90.36	0.00	90.36
+
+3.	Write a SELECT statement that returns one column from the Vendors table named Full Name. Create this column from the VendorContactFName and VendorContactLName columns. Format it as follows: last name, comma, first name (for example, “Doe, John”). Sort the result set by last name, then by first name.
+
+FullName
+Aaronsen, Thom
+Aileen, Joan
+Alberto, Francesco
+Alexis, Alexandro
+Alondra, Zev
+Angelica, Nashalie
+
+4.	Write a SELECT statement that returns three columns: InvoiceTotal	From the Invoices table
+10%	10% of the value of InvoiceTotal Plus 10%	The value of InvoiceTotal plus 10%
+(For example, if InvoiceTotal is 100.0000, 10% is 10.0000, and Plus 10% is 110.0000.) Only return those rows with a balance due greater than 1000. Sort the result set by InvoiceTotal, with the largest invoice first.
+
+InvoiceTotal	Tenpercent	PlusTenPercent
+37966.19	3796.619000	41762.809000
+26881.40	2688.140000	29569.540000
+23517.58	2351.758000	25869.338000
+21842.00	2184.200000	24026.200000
+20551.18	2055.118000	22606.298000
+
+5.	Modify the solution to exercise 2a to filter for invoices with an InvoiceTotal that’s greater than or equal to $500 but less than or equal to $10,000.
+
+Number	Total	Credits	Balance
+31361833	579.42	0.00	579.42
+9982771	503.20	0.00	503.20
+989319-447	3689.99	3689.99	0.00
+97/222	1000.46	1000.46	0.00
+989319-417	2051.59	2051.59	0.00
+
+6.	Modify the solution to exercise 3 to filter for contacts whose last name begins with the letter A, B, C, or E.
+
+FullName
+Aaronsen, Thom
+Aileen, Joan
+Alberto, Francesco
+Alexis, Alexandro
+Alondra, Zev
+Angelica, Nashalie
+
+7.	Write a SELECT statement that determines whether the PaymentDate column of the Invoices table has any invalid values. To be valid, PaymentDate must be a null value if there’s a balance due and a non-null value if there’s no balance due. Code a compound condition in the WHERE clause that tests for these conditions.
+
+PaymentDate	InvoiceTotal
+NULL	85.31
+NULL	52.25
+NULL	579.42
+NULL	59.97
+NULL	67.92
+NULL	30.75
+NULL	20551.18
+NULL	503.20
+NULL	90.36
+NULL	10976.06
+NULL	224.00
