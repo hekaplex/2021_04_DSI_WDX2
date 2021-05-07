@@ -1,0 +1,8 @@
+Voucher Automation:
+===================
+1   Where (Data source) for student ID ? (data source connections )
+2   How do we determine which student is included in the voucher list (Business logic, data completeness & accuracy)
+3   How do we know which code to assign to each student request
+4   Is the student chat a private one-on-one communication or a group communication session
+5   Where does one access the dev tools expected to be used for this project option (Power Platform tools) ?
+6   Object definition of Code, Digital resource
