@@ -1,8 +1,23 @@
 Voucher Automation:
 ===================
 1   Where (Data source) for student ID ? (data source connections )
+
+    The base examples are in the project folder.  Many dat asources will require addition synthesized rows/cases
+
 2   How do we determine which student is included in the voucher list (Business logic, data completeness & accuracy)
+
+
 3   How do we know which code to assign to each student request
+
+    
+
 4   Is the student chat a private one-on-one communication or a group communication session
+
+    Either way is OK. All specs are guidelines and based on interst and ability you can adjust scope as desired
+
 5   Where does one access the dev tools expected to be used for this project option (Power Platform tools) ?
+
+    Power Platform is a browser based development environment based on our class' Azure Account.  We will have access to it beginning in Module 6
+
 6   Object definition of Code, Digital resource
+
