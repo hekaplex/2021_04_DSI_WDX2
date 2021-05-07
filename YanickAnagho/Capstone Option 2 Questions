@@ -6,10 +6,11 @@ Voucher Automation:
 
 2   How do we determine which student is included in the voucher list (Business logic, data completeness & accuracy)
 
+    You will need to design tables/workflows where the enrollment of a student and their expected classes and certification codes will be assigned and then tracked.  If you only choosee narrower parts for analytic samples you can simulate stages of data as needed
 
 3   How do we know which code to assign to each student request
 
-    
+    Sample data is included in VoucherBank.xlsx
 
 4   Is the student chat a private one-on-one communication or a group communication session
 
@@ -20,4 +21,6 @@ Voucher Automation:
     Power Platform is a browser based development environment based on our class' Azure Account.  We will have access to it beginning in Module 6
 
 6   Object definition of Code, Digital resource
+
+    The exact interfaces to true digital resourcesa re not teh integration exercise; these codes are sample data to construict parts of on an example application emphasizing difffeent areas or breadth and depth
 
