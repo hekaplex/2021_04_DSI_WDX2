@@ -1,0 +1,4 @@
+To display my understanding of the course material provided in the data science immersive track I will be using a dataset that was found on Kaggle.com to predict heart attack likelihood 
+depending on the person's age, sex, types of chest pain, lab work from each patient. 
+
+https://www.kaggle.com/rashikrahmanpritom/heart-attack-analysis-prediction-dataset (Source)
