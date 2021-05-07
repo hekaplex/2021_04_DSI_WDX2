@@ -5,17 +5,36 @@ Sort the result set by last name, then by first name.
 USE AP;
 */
     SELECT 
-        VendorContactFName, 
+        VendorContactFName,
+
         VendorContactLNAME, 
+        
         VendorName
-    FROM Vendors
-    ORDER BY VendorContactFName, VendorContactLName;
+    FROM 
+        Vendors
+
+    ORDER BY 
+        
+        VendorContactFName, 
+        
+        VendorContactLName;
 
     /* 2.	Write a SELECT statement that returns four columns from the Invoices table, named Number, Total, Credits, and Balance: */
-SELECT InvoiceNumber AS Number, 
-    InvoiceTotal AS Total,
-    PaymentTotal + CreditTotal AS Credits,
-    InvoiceTotal - (PaymentTotal + CreditTotal) AS Balance
+SELECT InvoiceNumber 
+    AS Number, 
+        
+        InvoiceTotal 
+        
+        AS Total,
+
+        PaymentTotal + CreditTotal 
+        
+        AS Credits,
+        
+        InvoiceTotal - (PaymentTotal + CreditTotal) 
+        
+        AS Balance
+
 FROM Invoices;
 
 /*
@@ -43,3 +62,46 @@ SELECT InvoiceTotal,
 FROM Invoices
 WHERE InvoiceTotal - PaymentTotal - CreditTotal > 1000
 ORDER BY InvoiceTotal ASC
+
+/*
+5.	Modify the solution to exercise 2a to filter for invoices with an InvoiceTotal 
+that’s greater than or equal to $500 but less than or equal to $10,000.
+*/
+
+SELECT InvoiceNumber AS Number,
+       InvoiceTotal AS Total,
+       PaymentTotal + CreditTotal AS Credits,
+       InvoiceTotal - (PaymentTotal + CreditTotal) AS Balance
+FROM Invoices
+WHERE InvoiceTotal >= 500 AND InvoiceTotal <= 10000;
+
+/*
+6.	Modify the solution to exercise 3 to filter for contacts whose last name begins with the letter A, B, C, or E.
+*/
+SELECT VendorContactLName + ', ' + VendorContactLName AS [Full Name]
+FROM Vendors
+WHERE VendorContactLName LIKE '[A-C,E]%'
+ORDER BY VendorContactLName, VendorContactFName; 
+
+/*
+7.	Write a SELECT statement that determines whether the PaymentDate column of the Invoices table has any invalid values. 
+To be valid, PaymentDate must be a null value if there’s a balance due and a non-null value if there’s no balance due. 
+Code a compound condition in the WHERE clause that tests for these conditions.
+*/
+SELECT *
+    --,InvoiceTotal - PaymentTotal - CreditTotal AS Balance 
+From Invoices
+WHERE 
+(
+        (
+            InvoiceTotal - PaymentTotal - CreditTotal <= 0
+        ) 
+        AND 
+            PaymentDate IS NOT NULL)
+    OR
+        (
+            
+            (
+                InvoiceTotal - PaymentTotal - CreditTotal > 0) 
+        AND 
+            PaymentDate IS NOT NULL);
