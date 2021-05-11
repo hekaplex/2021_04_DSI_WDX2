@@ -1,0 +1,5 @@
+This capstone project is being conducted for the Divergence Academy Data Science Immersive Program - 2021_04_DSI_WDX2 Cohort. 
+
+For my capstone, I plan to predict the Loss Given Default (LGD) of the borrowers within my dataset.  What is LGD by the way?  Loss given default (LGD) is the amount of money a bank or other financial institution loses when a borrower defaults on a loan, depicted as a percentage of total exposure at the time of default. A financial institution’s total LGD is calculated after a review of all outstanding loans using cumulative losses and exposure.  I had plan investigate the consumer credit rating and payment history to predict whether borrower's pay the loan in full or default on their loan obligations.   
+
+I would like to perform my project utilizing the tools/software that I learn throughout this course.  I plan to perform my capstone with an emphasis on supervised machine learning.
