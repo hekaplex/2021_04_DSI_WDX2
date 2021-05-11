@@ -97,7 +97,7 @@ WHERE
             InvoiceTotal - PaymentTotal - CreditTotal <= 0
         ) 
         AND 
-            PaymentDate IS NOT NULL)
+            PaymentDate IS NULL)
     OR
         (
             
