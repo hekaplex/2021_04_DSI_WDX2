@@ -18,7 +18,7 @@ So, given my love for conspiracy theories, my aim is to develop a web and mobile
 using Power Bi and Python to publish reports based on real data and information WITHOUT any kind of political or social bias 
 in order to combat the only real pandemic that I acknowledge: Fake News. I am going to call it "Real Data". 
 
-The concept is simple. There won't be any kind of partisan naritive that is trying to be imposed upon the applications readers. Though the reports will 
+The concept is simple. While there won't be any kind of partisan naritive that is trying to be imposed upon the applications readers, the reports will 
 address current, and sometimes hot-button topics. 
 
 In fact, it's being designed to work hand-in-hand with social media and news outlets so that people will be able to readily fact-check 
@@ -27,6 +27,8 @@ what they're being told and what they hear, right in the palm of their hands.
 Everything else is within reach, right? Why shoulnd't Real Data? 
 
 I have purchased RealData.app, the website (also written in React Native) will be launched at the end of the project along-side the mobile app, 
-after the projects completion for this course....of course. From there it will be regularly maintained. While many people will be able to add data sets and reports to the app through aggregation of sources and API, all data will go through a central vetting process to maintain the apps integrity and primary mission. 
+after the projects completion for this course....of course ;) . From there it will be regularly maintained. While many people will be able to add data-sets 
+and reports to the app through aggregation of sources and integrated API, all data will go through a central vetting process to maintain the apps integrity 
+and primary mission. 
 
 Coming to the iOS & Android App Store sooner than you might expect!
