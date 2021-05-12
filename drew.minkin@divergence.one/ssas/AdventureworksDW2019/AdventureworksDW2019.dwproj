@@ -133,7 +133,15 @@
   <Configurations>
     <Configuration>
       <Name>Development</Name>
-      <Options />
+      <Options>
+        <ConnectionMappings>
+          <ConfigurationSetting>
+            <Id>OPBI</Id>
+            <Name>OPBI</Name>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI10.1;Data Source=localhost;Integrated Security=SSPI;Initial Catalog=ContosoRetailDW</Value>
+          </ConfigurationSetting>
+        </ConnectionMappings>
+      </Options>
     </Configuration>
   </Configurations>
 </Project>
