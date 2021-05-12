@@ -24,4 +24,7 @@ what they're being told and what they hear, right in the palm of their hands.
 
 Everything else is within reach, right? Why shoulnd't Real Data? 
 
-Coming to the iOS App Store sooner than you might expect!
+I have purchased RealData.app, the website (also written in React Native) will be launch at the end of the project along side the mobil app, 
+after the projects completion for this course....of course. From there it will be regularly maintained. While many people will be able to add data sets and reports to through the app through aggregation of sources and API, all data will go through a central vetting process to maintain the apps integrity and primary mission. 
+
+Coming to the iOS & Android App Store sooner than you might expect!
