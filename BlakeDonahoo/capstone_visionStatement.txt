@@ -2,3 +2,33 @@ Just for fun, to outline my understanding of the course material and to display 
 
 I am going to construct an app for UFO enthusiasts (I know, Haha). News will be aggregated from multiple sources throughout the web, users will be able to create 
 profiles, post pictures, comment on material. Other features will be added as the project is completed depending on time constraints. 
+
+05/11/2021-------------------------------------------***Update/complete 180 for my Vision Statement***-----------------------------------------------------------------
+
+Originally, I wanted to use one of my python programs that I wrote for reversing the elliptic curve in the Koblitz itteration of ECDSA, 
+tying in the results into a database and using that information to narrow the window of brute-force needed to recover lost access to 
+cryptocurrency wallets. I say "reversing" very toung-in-cheek. It's really more of a full hash from seed number >> Private Key >> Public Key >> Addresses. 
+The goal of that being, in a nut-shell, bringing together what I know and what I learned into a cohesive display for my Capstone. 
+Upon further thought, however, I found myself perfectly capable of doing that now....so how exactly would that be an outline of what I 
+am yet to learn between now and August when the course is complete?
+
+Right, that's what I was thinking too. 
+
+So, given my love for conspiracy theories, my aim is to develop a web and mobile application written in React Native, 
+using Power Bi and Python to publish reports based on real data and information WITHOUT any kind of political or social bias 
+in order to combat the only real pandemic that I acknowledge: Fake News. I am going to call it "Real Data". 
+
+The concept is simple. While there won't be any kind of partisan naritive that is trying to be imposed upon the applications readers, the reports will 
+address current, and sometimes hot-button topics. 
+
+In fact, it's being designed to work hand-in-hand with social media and news outlets so that people will be able to readily fact-check 
+what they're being told and what they hear, right in the palm of their hands. 
+
+Everything else is within reach, right? Why shoulnd't Real Data? 
+
+I have purchased RealData.app, the website (also written in React Native) will be launched at the end of the project along-side the mobile app, 
+after the projects completion for this course....of course ;) . From there it will be regularly maintained. While many people will be able to add data-sets 
+and reports to the app through aggregation of sources and integrated API, all data will go through a central vetting process to maintain the apps integrity 
+and primary mission. 
+
+Coming to the iOS & Android App Store sooner than you might expect!
