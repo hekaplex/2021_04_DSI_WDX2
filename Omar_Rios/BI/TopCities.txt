@@ -1,0 +1,7 @@
+I attempted to create a BI Page on The top cities according to the news. My first Page was about the violent crime rate compared to the top cities that were listed 
+as the population within those cities to display a trend between crime/popularity/population 
+
+My second page was about the differences between the monthly rent due and the average annual salary of a certain state. I used bookmarks to show how there were patterns between
+the salary and monthly rent and the outliers that were not within the pattern. 
+
+https://app.powerbi.com/groups/me/reports/dacfb828-da77-4757-ba0b-430324072c86/ReportSection0a6fcdee896976c8a06d
