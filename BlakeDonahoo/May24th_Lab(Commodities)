@@ -1,0 +1,6 @@
+These are the first two basic commodities analyses for the commodities tab on RealData.app
+
+gold:
+<iframe width="1024" height="612" src="https://app.powerbi.com/view?r=eyJrIjoiMDVjNWEzNDYtYTBmMC00ZTE4LWExNjUtNDY1ODQ5MDgyMGIxIiwidCI6IjY3NGQzZTZjLTQ1ZjctNDJlOS05MzhjLWZjZDAxZTNmZjU3YyJ9" frameborder="0" allowFullScreen="true"></iframe>
+oil:
+<iframe width="1024" height="612" src="https://app.powerbi.com/view?r=eyJrIjoiNzQyYTIxMDMtNDY1Ni00NDYwLTgxYzEtZWMyODZiYTVkZTU2IiwidCI6IjY3NGQzZTZjLTQ1ZjctNDJlOS05MzhjLWZjZDAxZTNmZjU3YyJ9" frameborder="0" allowFullScreen="true"></iframe>
