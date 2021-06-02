@@ -1,0 +1,11 @@
+﻿Sales Amount Jan-Feb 2007 :=
+CALCULATE(
+	SUMX (Sales,Sales[Net Price]*Sales[Quantity]),
+	FILTER(
+		ALL ('Date'),
+		AND (
+			'Date'[Date] >= DATE (2007,1,1),
+			'Date'[Date] <= DATE (2007,2,28)
+		)
+	)
+)
