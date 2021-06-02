@@ -44,3 +44,14 @@ Looking forward to sharing this with everybody!
 I am writing a letter and sending it to every major hospital in Texas (starting with Parkland) in the hopes of recieving uncensored information and statistics on the covid-19 
 mortality rate. Including wether or not the deceased was previously "vaccinated", and if any co-morbidity was present. More updates to come!
 >>>>>>> 24e5f477c5599c4081c1157866235c69d431ae82
+
+----05/27/2021----
+-Subtle name change from "RealData" to "RealData Application" ("RDA").
+-I am currently working on a python program to incorporate a polling mechanism for developing organic data reports through the RDA website. 
+Users (after creating an account) will be compensated for their opinions and answers to survey questions in cryptocurrency. I am thinking of using one that I already deployed 
+and supplied liquidity to (BEP20 token [https://www.Bep20.dev]) but I may create another just for this purpose. 
+-User accounts will be created into a cloud-hosted data server that I am building with resources through DigitalOcean
+-The cryptocurrency reports section is going to be populated with data via my own custom Python API scripts that I am developing through resources available through
+TrustWallet//BSCscan//EtherScan (It is almost complete but still a little buggy). Even still, I am contemplating scrapping the python API script I made and restarting 
+with GraphIQL [https://graphql.org/learn/queries/] since what I am reading about it says that it works a lot cleaner and feeds directly into data science oriented tools and graphs
+More updates to come!
