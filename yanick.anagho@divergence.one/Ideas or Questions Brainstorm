@@ -1,0 +1,23 @@
+1. Does energy consumption within any U.S. demographic region influenced by;
+    - Climatic condition
+    - population migration
+    - Or taste with respect to use of alternative source of energy
+    Action: - Locate Electricity Consumption Data Sets for certain region and time
+            - Locate Climate data sets  for certain region and time
+            - Locate population migration data for certain region and time
+            - Locate alternative source of energy for certain region and time
+
+2. (Redo Existing Work to learn)Can we predict the Bike ride share usage | count in a given U.S. demographic
+    based on other variables such as;
+    - Weather settings
+    E.g. Capital Bike Trip Data --> https://www.capitalbikeshare.com/system-data
+    Action: - Locate weather data for corresponding time period of Bike Trip Data focus
+                E.g. https://www.tableau.com/learn/articles/free-public-data-sets --> Local Climatological Data --> https://www.ncdc.noaa.gov/cdo-web/datatools/lcd
+
+3. Can we predict the future sale count of products sold on Amazon based on previous ratings. 
+    - Assumption that ratings posted are based on purchases so reflect purchase
+    E.g. https://code.datasciencedojo.com/datasciencedojo/datasets/tree/master/Amazon%20Product%20Reviews --> http://jmcauley.ucsd.edu/data/amazon/links.html
+         - use of ratings only dataset (3.2gb)
+         - Include Citation --> see 'Use of this data requires citation'
+
+4. 
