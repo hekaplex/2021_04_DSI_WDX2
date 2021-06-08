@@ -15,6 +15,12 @@ PS C:\WINDOWS\system32> wsl --set-version Ubuntu-18.04 1
 Conversion in progress, this may take a few minutes...
 Conversion complete.
 
+***Check that version was updated:
+
+PS C:\WINDOWS\system32> wsl -l -v
+  NAME            STATE           VERSION
+* Ubuntu-18.04    Running         1
+
 ***Close and reopen Powershell. Then configure network and firewall rules:
 
 Windows PowerShell
