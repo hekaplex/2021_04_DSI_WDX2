@@ -3,6 +3,19 @@ Added inbound firewall rule to enable connections to localhost from within Windo
 Possibly fixed
 (IP and network addresses redacted for security)
 --------------------------------------------------------------
+***First, downgrade WSL:
+PS C:\WINDOWS\system32> wsl --set-default-version 1
+PS C:\WINDOWS\system32> wsl --list --verbose
+  NAME            STATE           VERSION
+* Ubuntu-18.04    Running         2
+PS C:\WINDOWS\system32> wsl -l -v
+  NAME            STATE           VERSION
+* Ubuntu-18.04    Running         2
+PS C:\WINDOWS\system32> wsl --set-version Ubuntu-18.04 1
+Conversion in progress, this may take a few minutes...
+Conversion complete.
+
+***Close and reopen Powershell. Then configure network and firewall rules:
 
 Windows PowerShell
 Copyright (C) Microsoft Corporation. All rights reserved.
