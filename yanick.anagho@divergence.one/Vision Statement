@@ -14,3 +14,20 @@ an architect with data and derivative paths such as
     -Data engineering
     -Data Science
     -Data service via web application
+
+----06/04/2021----Status Update-----
+
+I am changing the scope of my initial capstone vision and initial data set. My capstone project scope | vision will now center on;
+1. Formulating and testing a question based on an identified data set
+2. Performing a design of the Power App components of Option 2
+
+This change in data set comes at the heals of the qualitative nature of my initial data set with respect to its intended question. 
+I used the World Bank Open Data source to identify data from four African Countries; two with English historical association and the
+other two with French historical association. The question here was to identify whether their historical association had a bearing
+on their current socio-economic status with respect to certain World Bank indicators or metrics over a period of time since 1960 to present.
+The issue with the dataset is the inconsistent availability of metric values for these four countries over the same given period.
+
+----06/07/2021---Status Update----
+I have identified a new dataset sourced from; http://deepyeti.ucsd.edu/jianmo/amazon/index.html
+The focus is on user ratings of products purchased on Amazon spaning from 1996 to 2018. Given the strong presence of e-commerce in 
+the US, the exploration of this dataset will give us an idea of product trends by category or department.

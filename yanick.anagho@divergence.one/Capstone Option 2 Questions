@@ -2,7 +2,7 @@ Voucher Automation:
 ===================
 1   Where (Data source) for student ID ? (data source connections )
 
-    The base examples are in the project folder.  Many dat asources will require addition synthesized rows/cases
+    The base examples are in the project folder.  Many data sources will require addition synthesized rows/cases
 
 2   How do we determine which student is included in the voucher list (Business logic, data completeness & accuracy)
 
@@ -22,5 +22,5 @@ Voucher Automation:
 
 6   Object definition of Code, Digital resource
 
-    The exact interfaces to true digital resourcesa re not teh integration exercise; these codes are sample data to construict parts of on an example application emphasizing difffeent areas or breadth and depth
+    The exact interfaces to true digital resources are not the integration exercise; these codes are sample data to construict parts of on an example application emphasizing difffeent areas or breadth and depth
 
