@@ -37,3 +37,10 @@ Go to https://www.RealData.app to see my progress along the way,
 ***To all of my classmates: If there is a topic that you have in mind that you would like to publish to RealData.app and be listed as a contributor feel free to get in touch with me
 
 Looking forward to sharing this with everybody!
+<<<<<<< HEAD
+=======
+
+----05/18/2021----
+I am writing a letter and sending it to every major hospital in Texas (starting with Parkland) in the hopes of recieving uncensored information and statistics on the covid-19 
+mortality rate. Including wether or not the deceased was previously "vaccinated", and if any co-morbidity was present. More updates to come!
+>>>>>>> 24e5f477c5599c4081c1157866235c69d431ae82
