@@ -55,3 +55,8 @@ and supplied liquidity to (BEP20 token [https://www.Bep20.dev]) but I may create
 TrustWallet//BSCscan//EtherScan (It is almost complete but still a little buggy). Even still, I am contemplating scrapping the python API script I made and restarting 
 with GraphIQL [https://graphql.org/learn/queries/] since what I am reading about it says that it works a lot cleaner and feeds directly into data science oriented tools and graphs
 More updates to come!
+
+----06/10/2021----
+After copious amounts of troubleshooting connectivity issues inside my develpment environment for Django (Ubuntu 18.04 on WSL/WSL2 with Python 3.8.6) I have decided last minute
+to change my programming construct of choice for the Survey/Polling feature inside of RDA to a more traditional HTML/CSS/PHP user input form that will feed data into an 
+external database in order to meet my weekly completion goals. I will be putting together a "dummy" survey (no real questions, just layouts and user input options) so that the database linkage can be completed on schedule. Later down the line, with more time to fix my Django development environment, this feature may be migrated.
