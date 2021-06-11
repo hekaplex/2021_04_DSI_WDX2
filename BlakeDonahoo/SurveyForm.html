@@ -1,0 +1,77 @@
+<!--
+This is the test survey that was put together for the RDA website for the purposes of:
+-creating database linkage between form submissions. 
+-link cryptopayment action to "submit" action at the end of each form.
+--create contingencies for form submission:
+		-if user exists(based on matching of email):
+			  if user has completed this survey previously:
+			    emit cryptopayment action
+			  else:
+			    "you can only recieve payment one time for each survey"
+		 else:
+		  "an error has occured, please make sure you entered the same email address that you created your account with"	
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RDA Test Survey Layout</title>
+</head>
+<body>
+<h2>RealData Test Survey</h2>
+<p>This questionaire is made for internal functions testing and to create the linkage to external databases. No participation necessary.</p>
+
+<form action="/action_page_binary.asp" method="post">
+	<fieldset>
+		<legend>RDA Test Survey</legend>
+
+		<form>
+		  <label for="fname">First Name:</label><br>
+		  <input type="text" id="fname" name="fname"><br><br>
+		  <label for="lname">Last Name:</label><br>
+		  <input type="text" id="lname" name="lname"><br><br>
+		  <label for="email">Email Address:</label><br>
+		  <input type="text" id="email" name="email">
+		  <p> Please be sure to use the email address you created your account with.</p>
+		</form><br><br>
+		<form>
+		  <label for="Q1">Question 1:</label><br>
+		  <input type="radio" id="q1op1" name="q1op1" value="option 1">
+		  <label for="q1op1">answer 1</label><br>
+		  <input type="radio" id="q1op2" name="q1op2" value="option 2">
+		  <label for="q1op2">answer 2</label><br>
+		  <input type="radio" id="q1op3" name="q1op3" value="option 3">
+		  <label for="q1op3">answer 3</label><br>
+		  <input type="radio" id="q1op4" name="q1op4" value="option 4">
+		  <label for="q1op4">answer 4</label>
+		</form><br><br>
+		
+		<form>
+		  <label for="Q2">Question 2:</label><br>
+		  <input type="radio" id="q2op1" name="q2op1" value="option 1">
+		  <label for="q2op1">answer 1</label><br>
+		  <input type="radio" id="q2op2" name="q2op2" value="option 2">
+		  <label for="q2op2">answer 2</label><br>
+		  <input type="radio" id="q2op3" name="q2op3" value="option 3">
+		  <label for="q2op3">answer 3</label><br>
+		  <input type="radio" id="q2op4" name="q2op4" value="option 4">
+		  <label for="q2op4">answer 4</label>
+		</form><br><br>
+		
+		<form>
+		  <label for="Q3">Question 3:</label><br>
+		  <input type="radio" id="q3op1" name="q3op1" value="option 1">
+		  <label for="q3op1">answer 1</label><br>
+		  <input type="radio" id="q3op2" name="q3op2" value="option 2">
+		  <label for="q3op2">answer 2</label><br>
+		  <input type="radio" id="q3op3" name="q3op3" value="option 3">
+		  <label for="q3op3">answer 3</label><br>
+		  <input type="radio" id="q3op4" name="q3op4" value="option 4">
+		  <label for="q3op4">answer 4</label>
+		</form><br><br>
+
+		<input type="submit" formenctype="multipart/form-data" formmethod="post" value="Submit">
+	</fieldset>
+</form>
+
+</body>
+</html>
