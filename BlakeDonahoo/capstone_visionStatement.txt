@@ -82,6 +82,9 @@ column 10: P*P*P*P*P*P*P(SHA256)
 column 11: P*P*P*P*P*P*P*P(SHA256)
 column 12: P*P*P*P*P*P*P*P*P(SHA256)
 
+After generating my dataset, the information will be analyzed with a scatterplot in Jupyter Notebooks where further analysis can be conducted, such as a calculation of 
+entropy as it pertains to number scale.
+
 I will be uploading the python scripts used to generate my data as well as the original text files that are being generated along the way. (semi)finished product will be in
 *.ipynb format using a sample amount of only 100 prime numbers. The full dataset that I am using on the command line is in excess of the first 1 million prime numbers. 
 
