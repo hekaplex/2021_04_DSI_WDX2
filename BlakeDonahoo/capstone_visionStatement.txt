@@ -59,7 +59,8 @@ More updates to come!
 ----06/10/2021----
 After copious amounts of troubleshooting connectivity issues inside my develpment environment for Django (Ubuntu 18.04 on WSL/WSL2 with Python 3.8.6) I have decided last minute
 to change my programming construct of choice for the Survey/Polling feature inside of RDA to a more traditional HTML/CSS/PHP user input form that will feed data into an 
-external database in order to meet my weekly completion goals. I will be putting together a "dummy" survey (no real questions, just layouts and user input options) so that the database linkage can be completed on schedule. Later down the line, with more time to fix my Django development environment, this feature may be migrated.
+external database in order to meet my weekly completion goals. I will be putting together a "dummy" survey (no real questions, just layouts and user input options) so that 
+the database linkage can be completed on schedule. Later down the line, with more time to fix my Django development environment, this feature may be migrated.
 
 ----06/16/2021----
 As a last minute change in plans, I decided to put the RDA application on hold so that I can focus more on displaying deep analytic and data manipulation comprehension, 
