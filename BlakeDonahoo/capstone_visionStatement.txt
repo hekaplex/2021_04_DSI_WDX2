@@ -66,7 +66,8 @@ As a last minute change in plans, I decided to put the RDA application on hold s
 and take a break from the UI-intensive requirements of a user-based application.
 Not to say that I am scrapping all of the work that's gone into RDA thus far, but I am choosing a different project as an approach to exhibiting a more relevant skillset. 
 That said, I have decided to analyze the relationship between the numeric representations of the hexadecimal output of the sha256 encryption algorithm, with a broader goal
-of discovering a pattern leading to a hash collision. I have chosen to generate my raw data in Python by using a list of the first 10k prime numbers and then putting those numbers through the sha256 algorithm and feeding the data to a new file. The formula for each of my colums is as follows in pseudo-code:
+of discovering a pattern leading to a hash collision. I have chosen to generate my raw data in Python by using a list of the first 10k prime numbers 
+and then putting those numbers through the sha256 algorithm and feeding the data to a new file. The formula for each of my colums is as follows in pseudo-code:
 column 1: index #
 column 2: prime number(P)
 column 3: P(sha256)
