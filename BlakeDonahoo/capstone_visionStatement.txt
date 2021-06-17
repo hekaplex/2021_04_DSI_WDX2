@@ -60,3 +60,27 @@ More updates to come!
 After copious amounts of troubleshooting connectivity issues inside my develpment environment for Django (Ubuntu 18.04 on WSL/WSL2 with Python 3.8.6) I have decided last minute
 to change my programming construct of choice for the Survey/Polling feature inside of RDA to a more traditional HTML/CSS/PHP user input form that will feed data into an 
 external database in order to meet my weekly completion goals. I will be putting together a "dummy" survey (no real questions, just layouts and user input options) so that the database linkage can be completed on schedule. Later down the line, with more time to fix my Django development environment, this feature may be migrated.
+
+----06/16/2021----
+As a last minute change in plans, I decided to put the RDA application on hold so that I can focus more on displaying deep analytic and data manipulation comprehension, 
+and take a break from the UI-intensive requirements of a user-based application.
+Not to say that I am scrapping all of the work that's gone into RDA thus far, but I am choosing a different project as an approach to exhibiting a more relevant skillset. 
+That said, I have decided to analyze the relationship between the numeric representations of the hexadecimal output of the sha256 encryption algorithm, with a broader goal
+of discovering a pattern leading to a hash collision. I have chosen to generate my raw data in Python by using a list of the first 10k prime numbers and then putting those numbers through the sha256 algorithm and feeding the data to a new file. The formula for each of my colums is as follows in pseudo-code:
+column 1: index #
+column 2: prime number(P)
+column 3: P(sha256)
+column 4: P*P(SHA256)
+column 5: P*P*P(SHA256)
+column 6: P*P*P*P(SHA256)
+column 7: P*P*P*P*P(SHA256)
+column 8: P*P*P*P*P*P(SHA256)
+column 9: P*P*P*P*P*P*P(SHA256)
+column 10: P*P*P*P*P*P*P*P(SHA256)
+column 11: P*P*P*P*P*P*P*P*P(SHA256)
+
+I will be uploading the python scripts used to generate my data as well as the original text files that are being generated along the way. (semi)finished product will be in
+*.ipynb format.
+
+
+
