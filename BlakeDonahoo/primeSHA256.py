@@ -2,10 +2,8 @@
 # First sequential output generation script in the range of (P(SHA256)) up to (P*P*P*P*P*P*P*P*P(SHA256))
 # Python 3.9.5
 # Blake Donahoo 6/16/2021
-
 import os 
 import hashlib
-
 def line_conversion():
 	with open ('10kprimes.txt','r') as t: # open source file to read prime numbers from
 		rl=t.readlines() # read each line of the file and classify each line as its own variable
