@@ -71,15 +71,16 @@ of discovering a pattern leading to a hash collision. I have chosen to generate 
 and then putting those numbers through the sha256 algorithm and feeding the data to a new file. The formula for each of my colums is as follows in pseudo-code:
 column 1: index #
 column 2: prime number(P)
-column 3: P(sha256)
-column 4: P*P(SHA256)
-column 5: P*P*P(SHA256)
-column 6: P*P*P*P(SHA256)
-column 7: P*P*P*P*P(SHA256)
-column 8: P*P*P*P*P*P(SHA256)
-column 9: P*P*P*P*P*P*P(SHA256)
-column 10: P*P*P*P*P*P*P*P(SHA256)
-column 11: P*P*P*P*P*P*P*P*P(SHA256)
+column 3: Range in numbers since last prime
+column 4: P(sha256)
+column 5: P*P(SHA256)
+column 6: P*P*P(SHA256)
+column 7: P*P*P*P(SHA256)
+column 8: P*P*P*P*P(SHA256)
+column 9: P*P*P*P*P*P(SHA256)
+column 10: P*P*P*P*P*P*P(SHA256)
+column 11: P*P*P*P*P*P*P*P(SHA256)
+column 12: P*P*P*P*P*P*P*P*P(SHA256)
 
 I will be uploading the python scripts used to generate my data as well as the original text files that are being generated along the way. (semi)finished product will be in
 *.ipynb format.
