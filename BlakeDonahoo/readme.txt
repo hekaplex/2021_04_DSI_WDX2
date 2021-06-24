@@ -1,11 +1,5 @@
 capstone_visionStatement
 
-
-Just for fun, to outline my understanding of the course material and to display the cohesive usage of all of it together in one usable product:
-
-I am going to construct an app for UFO enthusiasts (I know, Haha). News will be aggregated from multiple sources throughout the web, users will be able to create 
-profiles, post pictures, comment on material. Other features will be added as the project is completed depending on time constraints. 
-
 05/11/2021-------------------------------------------***Update/complete 180 for my Vision Statement***-----------------------------------------------------------------
 
 Originally, I wanted to use one of my python programs that I wrote for reversing the elliptic curve in the Koblitz itteration of ECDSA, 
