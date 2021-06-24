@@ -115,48 +115,97 @@ FROM ForecastCity AS F
 ----------------------------------------------------
 --Create new table for Forecasted Average sales price of a **TOP tier SFR in the US in May of 2022
 --CREATE TABLE ForecastAvgCitySFR
-
-SELECT T.may2021 + (SELECT avg(ForecastPct)/100
-						FROM ForecastCity AS F
-						WHERE F.Lstate LIKE 'TX') 
-						* T.may2021
-		AS 'HighProjectedPrice2022', CityName
---INTO ForecastAvgCitySFR
-From ForecastCity, avgSalesPriceMOtopTier AS T
---WHERE ForecastCity.Lstate LIKE 'TX'
-ORDER BY CityName ASC;
-
+SELECT 
+	(SELECT 
+		AVG(T.may2021) 
+		FROM avgSalesPriceMOtopTier AS T
+	)
+	* 
+	(1+ AVG(ForecastPct)/100) AS 'NationalProjectedHigh2022' 
+	,F.CityName
+	,F.Lstate
+FROM ForecastCity AS F 
+	JOIN avgSalesPriceMOtopTier AS T
+ON F.Lstate = T.Lstate
+GROUP BY F.CityName, F.Lstate
+ORDER BY NationalProjectedHigh2022 ASC
 --Forecasted Average sales price of a **BOTTOM tier SFR in the US in May of 2022
-SELECT DISTINCT B.may2021 + (SELECT avg(ForecastPct)/100
-						FROM ForecastCity AS F
-						WHERE F.Lstate LIKE 'TX') 
-						* B.may2021
-		AS 'LowProjectedPrice2022', CityName
-FROM ForecastCity AS F JOIN avgSalesPriceMObotTier AS B
+SELECT 
+	(SELECT 
+		AVG(B.may2021) 
+		FROM avgSalesPriceMObotTier AS B
+	)
+	* 
+	(1+ AVG(ForecastPct)/100) AS 'NationalProjectedLow2022' 
+	,F.CityName
+	,F.Lstate
+FROM ForecastCity AS F 
+	JOIN avgSalesPriceMObotTier AS B
 ON F.Lstate = B.Lstate
-WHERE B.Lstate LIKE 'TX'
-ORDER BY CityName ASC;
+GROUP BY F.CityName, F.Lstate
+ORDER BY NationalProjectedLow2022 ASC
+--Combination table of the two queries above 
+--NationalProjectedLow2022 | NationalProjectedHigh2022 | CityName | State
+
+SELECT 
+	(SELECT 
+		AVG(T.may2021) 
+		FROM avgSalesPriceMOtopTier AS T
+	)
+	* 
+	(1+ AVG(ForecastPct)/100) AS 'NationalProjectedHigh2022'
+	(SELECT 
+		AVG(B.may2021) 
+		FROM avgSalesPriceMObotTier AS B
+	)
+	* 
+	(1+ AVG(ForecastPct)/100) AS 'NationalProjectedLow2022'
+	,F.CityName
+	,F.Lstate
+FROM ForecastCity AS F 
+	JOIN avgSalesPriceMOtopTier AS T
+ON F.Lstate = T.Lstate
+GROUP BY F.CityName, F.Lstate
+ORDER BY NationalProjectedHigh2022 ASC		
+	
 
 
+	
 
 
+--Forecasted Average sales price of a **TOP tier SFR in each city in TEXAS in May of 2022
+SELECT 
+	(SELECT 
+		AVG(T.may2021) 
+		FROM avgSalesPriceMOtopTier AS T
+		WHERE T.Lstate LIKE 'TX')
+	* 
+	(1+ AVG(ForecastPct)/100) AS 'ProjectedHigh2022' 
+	,F.CityName
+FROM ForecastCity AS F 
+	JOIN avgSalesPriceMOtopTier AS T
+ON F.Lstate = T.Lstate
+WHERE F.Lstate LIKE 'TX'
+GROUP BY F.CityName
+ORDER BY ProjectedHigh2022 ASC
+
+--Forecasted Average sales price of a **BOTTOM tier SFR in each city in TEXAS in May of 2022
 SELECT 
 	(SELECT 
 		AVG(B.may2021) 
 		FROM avgSalesPriceMObotTier AS B
 		WHERE B.Lstate LIKE 'TX')
 	* 
-	(1+ AVG(ForecastPct)/100) AS Average 
+	(1+ AVG(ForecastPct)/100) AS 'ProjectedLow2022' 
 	,F.CityName
 FROM ForecastCity AS F 
 	JOIN avgSalesPriceMObotTier AS B
 ON F.Lstate = B.Lstate
 WHERE F.Lstate LIKE 'TX'
 GROUP BY F.CityName
-ORDER BY average ASC
+ORDER BY ProjectedLow2022 ASC
 
 
-	
 ---------------------------------------------------
 --4) What percentage of change can we see from the earliest data we have to the present (01/1996 - 05/2021)?
 --436113.137255
