@@ -87,7 +87,8 @@ I will be uploading the python scripts used to generate my data as well as the o
 
 ----06/24/2021----
 The above SHA256 analysis is currently on hold, and possibly being scrapped all together. I understand the right way to produce a hash collision, and the above analysis 
-would simply serve as a supplemental tool, so to speak, of that outcome. The main goal was to focus on something that had a broader depth of analytical questions that could be asked and answered as well as feed into visual models of those findings in order to outline the DSI coursework. The SHA256 analysis, however, can only really be produced 
+would simply serve as a supplemental tool, so to speak, of that outcome. The main goal was to focus on something that had a broader depth of analytical questions that could be
+asked and answered as well as feed into visual models of those findings in order to outline the DSI coursework. The SHA256 analysis, however, can only really be produced 
 through pure python since no other data analysis software can handle integers of 256bits. There is a folder for it in my directory showing the bit of work I did with the 
 concept that includes:::
 - *.txt of the original prime numbers being analyzed
