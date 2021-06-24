@@ -56,7 +56,7 @@ WHERE B.StateName LIKE 'Texas'
 											33.44022927261284
 
 											(1 row affected)
-----------------------------------------
+
 							SANITY CHECK>>					RAW TEXAS STATE PERCENTAGE DIFFERENCE = 33.49%
 															142658  =    x   
 															-------   ------
@@ -102,10 +102,11 @@ FROM avgSalesPriceMObotTier AS B, avgSalesPriceMOtopTier AS T
 */
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 --Average sales price of a SFR in the United States in May of 2021
---3) What is the average sales price for any home within the United States?
-SELECT AVG(T.may2021+B.may2021)/2 AS AverageSalesPrice
-FROM avgSalesPriceMOtopTier AS T, avgSalesPriceMObotTier AS B
---WHERE T.StateName LIKE 'Texas'
+--3) What is the average sales price for any home (IN EACH STATE) within the United States?
+SELECT (T.may2021+B.may2021)/2 AS AverageSalesPrice, T.StateName
+FROM avgSalesPriceMOtopTier AS T JOIN avgSalesPriceMObotTier AS B
+ON T.Lstate = B.Lstate
+WHERE T.StateName LIKE 'Texas'
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 -- Just a note to myself for further calculations:::
 -- int to multiply avg sales price by
@@ -126,19 +127,42 @@ From ForecastCity, avgSalesPriceMOtopTier AS T
 ORDER BY CityName ASC;
 
 --Forecasted Average sales price of a **BOTTOM tier SFR in the US in May of 2022
-SELECT B.may2021 + (SELECT avg(ForecastPct)/100
+SELECT DISTINCT B.may2021 + (SELECT avg(ForecastPct)/100
 						FROM ForecastCity AS F
 						WHERE F.Lstate LIKE 'TX') 
 						* B.may2021
 		AS 'LowProjectedPrice2022', CityName
-From ForecastCity, avgSalesPriceMObotTier AS B
+FROM ForecastCity AS F JOIN avgSalesPriceMObotTier AS B
+ON F.Lstate = B.Lstate
+WHERE B.Lstate LIKE 'TX'
 ORDER BY CityName ASC;
+
+
+
+
+SELECT 
+	(SELECT 
+		AVG(B.may2021) 
+		FROM avgSalesPriceMObotTier AS B
+		WHERE B.Lstate LIKE 'TX')
+	* 
+	(1+ AVG(ForecastPct)/100) AS Average 
+	,F.CityName
+FROM ForecastCity AS F 
+	JOIN avgSalesPriceMObotTier AS B
+ON F.Lstate = B.Lstate
+WHERE F.Lstate LIKE 'TX'
+GROUP BY F.CityName
+ORDER BY average ASC
+
+
 	
 ---------------------------------------------------
 --4) What percentage of change can we see from the earliest data we have to the present (01/1996 - 05/2021)?
-
+--436113.137255
 SELECT AVG(T.may2021+B.may2021) - AVG(T.jan1996+B.jan1996) AS AverageSalesPriceDifference
-FROM avgSalesPriceMOtopTier AS T, avgSalesPriceMObotTier AS B
+FROM avgSalesPriceMOtopTier AS T JOIN avgSalesPriceMObotTier AS B
+ON T.Lstate = B.Lstate
 /*
 AverageSalesPriceDifference
 ---------------------------------------
