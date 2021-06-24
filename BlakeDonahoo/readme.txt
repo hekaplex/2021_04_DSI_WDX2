@@ -1,3 +1,6 @@
+capstone_visionStatement
+
+
 Just for fun, to outline my understanding of the course material and to display the cohesive usage of all of it together in one usable product:
 
 I am going to construct an app for UFO enthusiasts (I know, Haha). News will be aggregated from multiple sources throughout the web, users will be able to create 
