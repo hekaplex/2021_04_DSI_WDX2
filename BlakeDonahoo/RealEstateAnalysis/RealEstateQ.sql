@@ -10,7 +10,10 @@ Basic questions and expectations one might ask themselves when reviewing the dat
 
 4) What percentage of change can we see from the earliest data we have to the present (01/1996 - 05/2021)?
 5) What is the average change per year that can be observed from the data?
-
+	avg(high) & avg(low)
+5.2) What is the average aggregated change per year? 
+	AVG(avg(high),avg(low))
+	
 ) Create new data table for a (High & Low) price prediction (In any city in the USA) in May 2022 (One Year Forecast) 
 	INCLUDING: AverageChangePerYear
 
