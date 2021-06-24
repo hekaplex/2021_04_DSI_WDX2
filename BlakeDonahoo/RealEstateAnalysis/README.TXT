@@ -2,7 +2,8 @@
 As a supplement to my main capstone project of the RealData Application (currently on hold) this is an analysis of the real estate market in the US with data obtained 
 from https://www.zillow.com/research/data/ as *.CSV files and constructed into a SQL database. While this analysis is done partly out of personal interest (having studied
 real estate in California, Nevada and Texas), it also serves as a better lab-rat to test and illustrate analytical and ML ability acquired through content taught in the 
-Divergence DSI course.
+Divergence DSI course. I was otherwise finding myself preoccupied with UI/UX properties of the application I was developing and not focusing enough of my energy into 
+displaying the more relevant concepts at-hand :)
 
 The data obtained consists of:::
 -Average sales price of a Single Family Residence (SFR) (Top Tier) from January 1996 to May 2021
