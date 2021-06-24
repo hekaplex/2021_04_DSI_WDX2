@@ -92,11 +92,16 @@ I will be uploading the python scripts used to generate my data as well as the o
 The above SHA256 analysis is currently on hold, and possibly being scrapped all together. I understand the right way to produce a hash collision, and the above analysis 
 would simply serve as a supplemental tool, so to speak, of that outcome. The main goal was to focus on something that had a broader depth of analytical questions that could be 
 asked and answered as well as feed into visual models of those findings in order to outline the DSI coursework. The SHA256 analysis, however, can only really be produced 
-through pure python since no other data analysis software can handle integers of 256bits. 
+through pure python since no other data analysis software can handle integers of 256bits. There is a folder for it in my directory showing the bit of work I did with the 
+concept that includes:::
+- *.txt of the original prime numbers being analyzed
+- the python script I wrote to process the raw data:
+    (automated system readout from file>> change data type>> remove blank spaces>> hash>> convert to HEX>> convert to INT>> write to new txt file)
+- output.txt of the integers that were generated    
 
 Instead, I created the Real Estate Analysis folder. Data was sourced through Zillow's data research page and built into a SQL database where further data manipulation can be 
 performed and displayed. As of now, that will be my "secondary" capstone target project. RDA isn't completely retired, but I am taking a break from it so that I am not 
-putting too much time into UI/UX. Check out the README.txt in the folder for a better overview of the project.
+putting too much time into UI/UX. Check out the README.txt in the RealEstateAnalysis folder for a better overview of the project.
 
 
 
