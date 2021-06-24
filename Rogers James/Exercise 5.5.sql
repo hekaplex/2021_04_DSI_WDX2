@@ -1,1 +1,0 @@
-UPDATE InvoiceCopy SET PaymentDate = GETDATE() , PaymentTotal = InvoiceTotal WHERE PaymentDate IS NULL;
