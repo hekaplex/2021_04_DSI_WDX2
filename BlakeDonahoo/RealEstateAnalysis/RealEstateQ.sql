@@ -186,7 +186,7 @@ FROM X
 ON X.State = Y.State
 ORDER BY Y.State DESC;
 /*
-(14834755 rows affected)
+(22639 rows affected)
 
 Completion time: 2021-06-25T12:56:31.4441435-05:00
 */
