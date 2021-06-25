@@ -28,17 +28,17 @@ SELECT B.StateName, B.may2021 AS 'Bottom Tier'
 FROM avgSalesPriceMObotTier AS B
 WHERE B.StateName LIKE 'Texas'
 /*
-														StateName                                          Top Tier
-														-------------------------------------------------- ---------------------------------------
-														Texas                                              425969
+							StateName                                          Top Tier
+							-------------------------------------------------- ---------------------------------------
+							Texas                                              425969
 
-														(1 row affected)
+							(1 row affected)
 
-														StateName                                          Bottom Tier
-														-------------------------------------------------- ---------------------------------------
-														Texas                                              142658
+							StateName                                          Bottom Tier
+							-------------------------------------------------- ---------------------------------------
+							Texas                                              142658
 
-														(1 row affected)
+							(1 row affected)
 */
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 --Percentage of the Top Tier that the Bottom Tier represents >> (State and National level)
@@ -51,54 +51,54 @@ WHERE B.StateName LIKE 'Texas'
 --FROM avgSalesPriceMObotTier AS B, avgSalesPriceMOtopTier AS T
 
 /* 
-											 Average Percentage Difference			<< (Between Top & Bottom Tier Single Family Residences in Texas)
-											---------------------------------------
-											33.44022927261284
+						 Average Percentage Difference			<< (Between Top & Bottom Tier Single Family Residences in Texas)
+						---------------------------------------
+						33.44022927261284
 
-											(1 row affected)
+						(1 row affected)
 
-							SANITY CHECK>>					RAW TEXAS STATE PERCENTAGE DIFFERENCE = 33.49%
-															142658  =    x   
-															-------   ------
-															425969  =   100
+		SANITY CHECK>>					RAW TEXAS STATE PERCENTAGE DIFFERENCE = 33.49%
+										142658  =    x   
+										-------   ------
+										425969  =   100
 
-															425969(X)=14265800 = 33.49%
+										425969(X)=14265800 = 33.49%
 */
 SELECT avg(B.may2021) AS ' Average National May2021 Low'
 FROM avgSalesPriceMObotTier AS B
 /*
-															 Average National May2021 Low
-															---------------------------------------
-															184447.490196
+										 Average National May2021 Low
+										---------------------------------------
+										184447.490196
 
-															(1 row affected)
+										(1 row affected)
 */
 SELECT avg(T.may2021) AS ' Average National May2021 High'
 FROM avgSalesPriceMOtopTier AS T
 /*
-															 Average National May2021 High
-															---------------------------------------
-															499001.254901
+										 Average National May2021 High
+										---------------------------------------
+										499001.254901
 
-															(1 row affected)
+										(1 row affected)
 */
 
 
 SELECT (avg(B.may2021)*100) / avg(T.may2021) AS ' Average National Percentage Difference'
 FROM avgSalesPriceMObotTier AS B, avgSalesPriceMOtopTier AS T
 /*
-															 Average National Percentage Difference = 36.96%		<< (Between Top & Bottom Tier Single Family Residences Nationally)
-															---------------------------------------
-															36.963331
+										 Average National Percentage Difference = 36.96%		<< (Between Top & Bottom Tier Single Family Residences Nationally)
+										---------------------------------------
+										36.963331
 
-															(1 row affected)
+										(1 row affected)
 
-							SANITY CHECK>>					RAW NATIONAL PERCENTAGE DIFFERENCE = 
-															184447.49  =    x   
-															-------       ------
-															499001.25  =   100
+		SANITY CHECK>>					RAW NATIONAL PERCENTAGE DIFFERENCE = 
+										184447.49  =    x   
+										-------       ------
+										499001.25  =   100
 
-															499001.25(X)=18444749 = 36.96%
+										499001.25(X)=18444749 = 36.96%
 */
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 --Average sales price of a SFR in the United States in May of 2021
@@ -123,7 +123,7 @@ SELECT
 	* 
 	(1+ AVG(ForecastPct)/100) AS 'NationalProjectedHigh2022' 
 	,F.CityName
-	,F.Lstate
+	,F.Lstate AS 'State'
 FROM ForecastCity AS F 
 	JOIN avgSalesPriceMOtopTier AS T
 ON F.Lstate = T.Lstate
@@ -138,40 +138,58 @@ SELECT
 	* 
 	(1+ AVG(ForecastPct)/100) AS 'NationalProjectedLow2022' 
 	,F.CityName
-	,F.Lstate
+	,F.Lstate AS 'State'
 FROM ForecastCity AS F 
 	JOIN avgSalesPriceMObotTier AS B
 ON F.Lstate = B.Lstate
 GROUP BY F.CityName, F.Lstate
 ORDER BY NationalProjectedLow2022 ASC
---Combination table of the two queries above 
+--Combination table of the two National Projection queries above 
 --NationalProjectedLow2022 | NationalProjectedHigh2022 | CityName | State
 
-SELECT 
-	(SELECT 
-		AVG(T.may2021) 
-		FROM avgSalesPriceMOtopTier AS T
-	)
-	* 
-	(1+ AVG(ForecastPct)/100) AS 'NationalProjectedHigh2022'
-	(SELECT 
-		AVG(B.may2021) 
-		FROM avgSalesPriceMObotTier AS B
-	)
-	* 
-	(1+ AVG(ForecastPct)/100) AS 'NationalProjectedLow2022'
-	,F.CityName
-	,F.Lstate
-FROM ForecastCity AS F 
-	JOIN avgSalesPriceMOtopTier AS T
-ON F.Lstate = T.Lstate
-GROUP BY F.CityName, F.Lstate
-ORDER BY NationalProjectedHigh2022 ASC		
-	
+WITH X AS (SELECT
+				(SELECT
+						AVG(T.may2021)
+						FROM avgSalesPriceMOtopTier AS T
+				)
+				*
+				(1+ AVG(ForecastPct)/100) AS 'NationalProjectedHigh2022'
+				,F.CityName
+				,F.Lstate AS 'State'
+			FROM ForecastCity AS F 
+				JOIN avgSalesPriceMOtopTier AS T
+			ON F.Lstate = T.Lstate
+			GROUP BY F.CityName, F.Lstate
+			)
+,
+Y AS (SELECT
+				(SELECT
+						AVG(B.may2021)
+						FROM avgSalesPriceMObotTier AS B
+				)
+				*
+				(1+ AVG(ForecastPct)/100) AS 'NationalProjectedLow2022'
+				,F.CityName
+				,F.Lstate AS 'State'
+			FROM ForecastCity AS F 
+				JOIN avgSalesPriceMObotTier AS B
+			ON F.Lstate = B.Lstate
+			GROUP BY F.CityName, F.Lstate
+			)
+SELECT X.NationalProjectedHigh2022
+		, Y.NationalProjectedLow2022
+		, X.CityName
+		, X.State
+FROM X 
+	JOIN
+	 Y
+ON X.State = Y.State
+ORDER BY Y.State DESC;
+/*
+(14834755 rows affected)
 
-
-	
-
+Completion time: 2021-06-25T12:56:31.4441435-05:00
+*/
 
 --Forecasted Average sales price of a **TOP tier SFR in each city in TEXAS in May of 2022
 SELECT 
@@ -204,8 +222,6 @@ ON F.Lstate = B.Lstate
 WHERE F.Lstate LIKE 'TX'
 GROUP BY F.CityName
 ORDER BY ProjectedLow2022 ASC
-
-
 ---------------------------------------------------
 --4) What percentage of change can we see from the earliest data we have to the present (01/1996 - 05/2021)?
 --436113.137255
