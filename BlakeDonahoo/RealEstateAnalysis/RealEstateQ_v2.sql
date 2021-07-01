@@ -177,5 +177,22 @@ SELECT State
 		, CityName
 		, (BottomTierProjection2022+MiddleTierProjection2022+TopTierProjection2022) / 3 AS 'AverageProjection2022'	
 FROM Forecast2022byCity 
+-------------
+SELECT B.may2021 AS Bvalue
+		, M.[May-21] AS Mvalue
+		, T.may2021 AS Tvalue
+FROM avgSalesPriceMObotTier AS B
+	JOIN avgSalesPriceMOmidTier AS M
+	ON B.RegionID = M.RegionID
+	AND B.SizeRank = M.SizeRank
+	AND B.StateName = M.StateName
+	AND B.Lstate = M.Lstate
+	JOIN avgSalesPriceMOtopTier AS T
+	ON M.RegionID = T.RegionID
+	AND M.SizeRank = T.SizeRank
+	AND M.StateName = T.StateName
+	AND M.Lstate = T.Lstate
+-------------
 
-	
+SELECT *
+FROM avgSalesPriceMOmidTier
