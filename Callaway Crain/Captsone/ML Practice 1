@@ -1,0 +1,20 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df = pd.read_cxv (''/Users/callawaycrain/Documents/Divergence/breach_report.csv'')
+df.columns
+
+df.drop(['Name of Covered Entity', 'State', 'Covered Entity Type',
+       'Breach Submission Date', 'Type of Breach',
+       'Location of Breached Information', 
+       'Web Description'],axis=1,inplace=True)
+       
+ df.dropna(subset=['Individuals Affected','Business Associate Present'],inplace=True)
+ 
+ pd.get_dummies(df['Business Associate Present'],drop_first=True)
+ ## Got error Here
+ 
+ df['Yes']=pd.get_dummies(df['Business Associate Present'],drop_first=True)
+ df.drop(['Business Associate Present'],axis=1,inplace=True)
