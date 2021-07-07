@@ -7,8 +7,8 @@ limit_count = int(
                 )
 #at least one calculation
 while counter < limit_count:
-    print(counter, end=" ")
+    print(counter, end=" \n")
     counter += 1
 #at least one returned value
-print("Congrats!!!!!\n\nThe loop has ended.")
+("Congrats!!!!!\n\nThe loop has ended.")
 

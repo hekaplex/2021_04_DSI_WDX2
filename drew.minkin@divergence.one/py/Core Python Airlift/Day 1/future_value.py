@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 
 #function defintion and input parameters
+def ytm(years):
+    return int(round(years*12,0))
+
 def calculateFutureValue(monthlyInvestment, monthlyRate, months):
 # iterator for length of calculation cycle
     futureValue = 0.0
@@ -27,17 +30,11 @@ a = True
 while a:
     try:
         monthlyInvestment = float(input("Configure Monthly Investment:\t"))
+        monthlyRate = float(input("Configure Monthly Rate:\t"))
+        ham = float(input("Configure Years of investment:\t"))
         a = False
     except ValueError:
         print("input must be a number, try again")
-        
-        
-
-monthlyRate = float(input("Configure Monthly Rate:\t"))
-ham = float(input("Configure Years of investment:\t"))
-
-def ytm(years):
-    return int(round(years*12,0))
 
 #calculate final value
 final_value = str(calculateFutureValue(monthlyInvestment, monthlyRate, ytm(ham)))
