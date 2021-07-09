@@ -13,6 +13,7 @@ def get_random_word():
     return words[random.randint(0,len(words))]
 
 #import wordlist
+HEKAPLEX INNOVATIONS
 
 # Get a random word from the word list
 def get_word():
