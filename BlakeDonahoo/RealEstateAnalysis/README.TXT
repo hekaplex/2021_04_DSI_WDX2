@@ -21,6 +21,6 @@ valuble enough to be showcased as official "findings" along side the Power Bi vi
 This project can be seen as a "hedge" bet against my primary capstone which follows a Machine Learning/Feature Engineering (Data Engineer) blueprint
 as opposed to "RDA" which follows a full application development blueprint. 
 
-I will be uploading a *.bak of the database file I created, TSQL queries, DAX queries, *.pbix for visual models, as well as *.ipynb for a finished product.
+I will be uploading a *.bak of the database file I created (DEPRICATED - backup too large) , TSQL queries, DAX queries, *.pbix for visual models, as well as *.ipynb for a finished product.
 
 ~ Enjoy
