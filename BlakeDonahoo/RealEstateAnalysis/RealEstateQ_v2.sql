@@ -21,16 +21,15 @@ Basic questions and expectations one might ask themselves when reviewing the dat
 2) How big is the gap between the three Tiers? *** (percentage change over time)
 3) What is the average sales price for any home within the United States as of May 2021?
 4) What percentage of change can we see from the earliest data we have to the present (01/1996 - 05/2021)?
-
+4.2) How clean is the data? Are we missing any chunks from anywhere on any dataset? 
 5) What is the average change per year that can be observed from the data? *** avg(high) | avg(mid) | avg(low)
 5.2) What is the average aggregated change per year? *** AVG(avg(high),avg(mid),avg(low))
 
 6) Create new data table for a (High | Mid | Low) price prediction (In any city in the USA) in May 2022 (One Year Forecast) *** INCLUDING: AverageChangePerYear
 */
 
-
+-- All 3 unPivoted tables combined
 -- StateName | State | Date | Bottom Tier | Mid Tier | Top Tier 
-
 SELECT B.StateName
 		, B.Lstate AS 'State'
 		, B.Month + ' ' + B.Year AS 'Date'
@@ -39,6 +38,7 @@ SELECT B.StateName
 		, B.Value AS 'Bottom Tier'
 		, M.Value AS 'Mid Tier'
 		, T.Value AS 'Top Tier'
+--INTO AllThree_Unpiv
 FROM UnPivAvgSalesPriceMoBotTier AS B
 	JOIN UnPivAvgSalesPriceMoMidTier AS M
 	ON B.StateName = M.StateName
@@ -52,8 +52,31 @@ FROM UnPivAvgSalesPriceMoBotTier AS B
 	AND M.Month = T.Month
 ORDER BY B.StateName, B.Lstate
 -------------
+
+-- Top and Bottom Tier unPivoted tables combined
+-- StateName | State | Month | Year | Bottom Tier | Top Tier 
+
+SELECT B.StateName
+		, B.Lstate AS 'State'
+		, B.Month
+		, B.Year
+		, B.Value AS 'Bottom Tier'
+		, T.Value AS 'Top Tier'
+--INTO TopAndBottom_Unpiv
+FROM UnPivAvgSalesPriceMoBotTier AS B
+	JOIN UnPivAvgSalesPriceMoTOPTier AS T
+	ON B.StateName = T.StateName
+	AND B.Lstate = T.Lstate
+	AND B.Year = T.Year
+	AND B.Month = T.Month
+ORDER BY B.StateName, B.Lstate
+
+
+
+
+
 SELECT *
-FROM UnPivAvgSalesPriceMoBotTier
+FROM TopAndBottom_Unpiv
 ----------------
 -- National Bottom Tier Projection for 2022 by city
 SELECT 
@@ -195,4 +218,52 @@ FROM avgSalesPriceMObotTier AS B
 -------------
 
 SELECT *
-FROM avgSalesPriceMOmidTier
+FROM UnPivAvgSalesPriceMoBotTier
+
+------------------------------
+
+-- Avg difference between values in the same column (difference over time) BOTTOM TIER
+-- Performed on the unpivoted tables 
+-- ORIGINAL SCHEMA   RegionID | SizeRank | StateName | Lstate | Date | Value
+-- NEW SCHEMA        StateName | Lstate | Date | Value | PriorMonth | DiffPrevMonth
+
+SELECT StateName
+		, Lstate
+		, B.Date
+		, Value
+		, LAG(Value) 
+			OVER(PARTITION BY Lstate ORDER BY B.Date) AS PriorMonth
+		, Value - LAG(Value)
+			OVER (PARTITION BY Lstate ORDER BY B.Date) AS DiffPrevMonth
+--INTO WindowBottom
+FROM UnPivAvgSalesPriceMoBotTier AS B
+ORDER BY Lstate
+		, B.Date
+-----------------------------------------------------------------------------------
+-- Avg difference between values in the same column (difference over time) TOP TIER
+SELECT StateName
+		, Lstate
+		, T.Date
+		, Value
+		, LAG(Value) 
+			OVER(PARTITION BY Lstate ORDER BY T.Date) AS PriorMonth
+		, Value - LAG(Value)
+			OVER (PARTITION BY Lstate ORDER BY T.Date) AS DiffPrevMonth
+        , (Value - LAG(Value) OVER (PARTITION BY Lstate ORDER BY T.Date)) / Value AS PercentageChange
+--INTO WindowTop
+FROM UnPivAvgSalesPriceMoTopTier AS T
+ORDER BY Lstate
+		, T.Date
+	
+----------------------------------------------------------	
+
+
+SELECT StateName
+		, Lstate
+		, Date
+		, Value
+		, PriorYear
+		, DiffPrevYear / (Value/100) AS PercentageChange
+FROM WindowBottom
+ORDER BY Lstate
+		, Date 
