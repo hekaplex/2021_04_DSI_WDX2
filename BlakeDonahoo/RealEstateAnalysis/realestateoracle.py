@@ -53,6 +53,7 @@ def mainmenu():
                     mainmenu()
                 elif input_0 != "0":
                     print("You killed me. (x__x) Just restart me already then.")
+                    cnxn.close()
     elif input_1 == "1":
         print( (pd.read_sql("SELECT * FROM Window_TMB WHERE Lstate LIKE \'{}\'".format(input_2.upper()), cnxn)) )
         input_0 = input("Type the number 0 and press enter to return to the main menu \n")
@@ -68,6 +69,7 @@ def mainmenu():
                     mainmenu()
                 elif input_0 != "0":
                     print("You killed me. (x__x) Just restart me already then.")
+                    cnxn.close()
     elif input_1 == "2" and input_2.lower() == "all":
         print( (pd.read_sql("SELECT * FROM ForecastSalesAvg2022", cnxn)) )
         input_0 = input("Type the number 0 and press enter to return to the main menu \n")
@@ -83,6 +85,7 @@ def mainmenu():
                     mainmenu()
                 elif input_0 != "0":
                     print("You killed me. (x__x) Just restart me already then.")
+                    cnxn.close()
     elif input_1 == "2":
         print( (pd.read_sql("SELECT * FROM ForecastSalesAvg2022 WHERE Lstate LIKE \'{}\'".format(input_2.upper()), cnxn)) )
         input_0 = input("Type the number 0 and press enter to return to the main menu \n")
@@ -97,5 +100,6 @@ def mainmenu():
                 if input_0 == "0":
                     mainmenu()
                 elif input_0 != "0":
-                    print("You killed me. (x__x) Just restart me already then.") 					            
+                    print("You killed me. (x__x) Just restart me already then.")
+                    cnxn.close()
 mainmenu()
