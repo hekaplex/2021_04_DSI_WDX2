@@ -101,6 +101,7 @@ def mainmenu():
         oracleInput_state = input("Type the two letter abbreviation of the state you want a prediction for (not case sensitive) \n\n")
         oracleInput_date = input("Type the numerical date you want a prediction for in the format: mm-dd-yyyy (with dashes) \n\n")
         print('You chose to predict the {} market in the state of {} around the time of {} \n\n'.format(oracleInput_market,oracleInput_state,oracleInput_date))                    
+        # proprietary ML algorithm being added in version 2.0
         mainmenu()
     input_2 = input("""
     What state would you like to know about? \n\n 
