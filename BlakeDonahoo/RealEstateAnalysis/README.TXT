@@ -1,4 +1,36 @@
---- June 24, 2021 --- 
+||\   ||////    ^    ||       ||////   ///// ////////  ^  //////// ||////
+|| \  ||       / \   ||       ||      //        ||    / \    ||    ||
+||_// ||////  /__ \  ||       ||////  //////    ||   /__ \   ||    ||////
+|| \  ||     //    \ ||       ||          //    ||  //    \  ||    ||
+||  \ ||//////      \||////   ||//// //////     || //      \ ||    ||////
+
+       
+    ///////  ||\       ^     /////// ||      ||//// 
+  ///    /// || \     / \   ///      ||      ||
+ ///    ///  ||_//   /__ \  ///      ||      ||////
+ //    ///   || \   //    \ ///      ||      ||
+ ///////     ||  \ //      \ /////// ||///// ||////
+-----------------------------------------------------
+A primitive data science library for real estate
+Creator: Blake Donahoo
+Published: 07-15-2021
+Version: 1.5
+Updated on: 07-18-2021
+
+Data Source: https://www.zillow.com/research/data/
+
+Data & Functionality contained: 
+ - Home values in every state since 1996
+ - Calculated value changes over time for every state since 1996
+ - Forecasting Metrics and predictive algorithms all the way down the the City level
+ - Rental Values in every state since 2014
+ 
+Coming in Version 2.0:
+  - Mean/Median/Mode, Standard Deviation for every slice of information
+  - Python generated visualizations like ScatterPlots, Histograms & BarGraphs
+  - "Oracle Prediction" using Proprietary prediction algorithms
+  
+  
 As a supplement to my main capstone project of the RealData Application (currently on hold) this is an analysis of the real estate market in the US with data obtained 
 from https://www.zillow.com/research/data/ as *.CSV files and constructed into a SQL database. While this analysis is done partly out of personal interest (having studied
 real estate in California, Nevada and Texas), it also serves as a better lab-rat to test and illustrate analytical and ML ability acquired through content taught in the 
