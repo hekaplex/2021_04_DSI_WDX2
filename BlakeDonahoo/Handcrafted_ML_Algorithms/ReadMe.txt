@@ -1,0 +1,1 @@
+These were created by branching off of what we covered in class in addition to following examples from @sentdex on youtube at https://www.youtube.com/watch?v=ZueoXMgCd1c&list=PLQVvvaa0QuDfKTOs3Keq_kaG2P55YRn5v&index=1 as well as https://pythonprogramming.net/machine-learning-tutorial-python-introduction/
